@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Praveen Kitkat — Admin</title><link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header><a class="brand" href="index.html">PRAVEEN <span>KITKAT</span></a><button id="logoutBtn" hidden>Logout</button></header>
+<main>
+<section id="loginPanel" class="panel">
+<h1>Admin Login</h1><p>Sign in with the Supabase Auth account you created for the website.</p>
+<form id="loginForm"><input id="email" type="email" required placeholder="Admin email"><input id="password" type="password" required placeholder="Password"><button>Sign in</button><small id="loginStatus"></small></form>
+</section>
+
+<section id="dashboard" hidden>
+<div class="top"><div><p class="eyebrow">CONTROL PANEL</p><h1>Website Dashboard</h1></div><button id="refreshBtn">Refresh</button></div>
+
+<div class="stats"><div><b id="bookingCount">0</b><span>Bookings</span></div><div><b id="galleryCount">0</b><span>Gallery items</span></div></div>
+
+<div class="panel">
+<h2>Bookings</h2><div id="bookings"></div>
+</div>
+
+<div class="panel">
+<h2>Gallery</h2>
+<form id="galleryForm">
+<input name="title" required placeholder="Gallery title">
+<input name="image_url" required placeholder="Public image URL">
+<input name="sort_order" type="number" value="0" placeholder="Order">
+<button>Add gallery item</button><small id="galleryStatus"></small>
+</form>
+<div id="galleryAdmin"></div>
+</div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin.js"></script>
+</body>
+</html>
